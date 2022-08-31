@@ -10,4 +10,7 @@ target
 /*.html/
 /libs/
 /cotuba.sh
-
+../book.epub
+../book.pdf
+../cotuba.sh
+../libs/
