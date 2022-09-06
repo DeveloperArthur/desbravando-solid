@@ -1,4 +1,4 @@
-package cotuba;
+package cotuba.cli;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 import java.util.Comparator;
 
 //classe responsável por extrair as opções de linha de comando
-public class LeitorOpcoesCLI {
+class LeitorOpcoesCLI {
     private Path diretorioDosMD;
     private String formato;
     private Path arquivoDeSaida;
