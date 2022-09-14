@@ -2,8 +2,6 @@ package cotuba.application;
 
 import cotuba.domain.Ebook;
 
-//TODO: E se utilizassemos o pattern bridge?
-public interface GeradorEPUB {
+public interface GeradorEbook {
     void gera(Ebook ebook);
-
 }

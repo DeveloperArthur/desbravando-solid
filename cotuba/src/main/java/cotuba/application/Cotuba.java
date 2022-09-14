@@ -2,6 +2,8 @@ package cotuba.application;
 
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
+import cotuba.epub.GeradorEPUBComEpublib;
+import cotuba.pdf.GeradorPDFImplComIText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,13 +12,10 @@ import java.util.List;
 
 @Component
 public class Cotuba {
-    private final GeradorPDF geradorPDF;
-    private final GeradorEPUB geradorEPUB;
+    private GeradorEbook geradorEbook;
     private final RenderizadorMDParaHTML renderizador;
 
-    public Cotuba(GeradorPDF geradorPDF, GeradorEPUB geradorEPUB, RenderizadorMDParaHTML renderizador) {
-        this.geradorPDF = geradorPDF;
-        this.geradorEPUB = geradorEPUB;
+    public Cotuba(RenderizadorMDParaHTML renderizador) {
         this.renderizador = renderizador;
     }
 
@@ -33,11 +32,13 @@ public class Cotuba {
         ebook.setArquivoDeSaida(arquivoDeSaida);
 
         if ("pdf".equals(formato)) {
-            geradorPDF.gera(ebook);
+            geradorEbook = new GeradorPDFImplComIText();
         } else if ("epub".equals(formato)) {
-            geradorEPUB.gera(ebook);
+            geradorEbook = new GeradorEPUBComEpublib();
         } else {
             throw new IllegalArgumentException("Formato do ebook inválido: " + formato);
         }
+
+        geradorEbook.gera(ebook);
     }
 }
