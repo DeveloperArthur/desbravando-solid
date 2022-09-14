@@ -5,10 +5,10 @@ import org.commonmark.node.AbstractVisitor;
 import org.commonmark.node.Heading;
 import org.commonmark.node.Text;
 
-public class DescobridorDeHeadings extends AbstractVisitor {
+class DescobridorDeHeadings extends AbstractVisitor {
     private Capitulo capitulo;
 
-    public DescobridorDeHeadings(Capitulo capitulo) {
+    DescobridorDeHeadings(Capitulo capitulo) {
         this.capitulo = capitulo;
     }
 

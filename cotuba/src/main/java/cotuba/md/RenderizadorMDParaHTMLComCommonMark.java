@@ -10,12 +10,12 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class RenderizadorMDParaHTML {
+public class RenderizadorMDParaHTMLImpl implements RenderizadorMDParaHTML {
 
+    @Override
     public List<Capitulo> renderiza(Path diretorioDosMD){
         return obtemArquivosMD(diretorioDosMD).stream()
                 .map(arquivoMD -> {
