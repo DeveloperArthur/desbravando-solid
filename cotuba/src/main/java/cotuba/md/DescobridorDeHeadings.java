@@ -1,15 +1,15 @@
 package cotuba.md;
 
-import cotuba.domain.Capitulo;
+import cotuba.domain.builder.CapituloBuilder;
 import org.commonmark.node.AbstractVisitor;
 import org.commonmark.node.Heading;
 import org.commonmark.node.Text;
 
 class DescobridorDeHeadings extends AbstractVisitor {
-    private Capitulo capitulo;
+    private CapituloBuilder capituloBuilder;
 
-    DescobridorDeHeadings(Capitulo capitulo) {
-        this.capitulo = capitulo;
+    DescobridorDeHeadings(CapituloBuilder capituloBuilder) {
+        this.capituloBuilder = capituloBuilder;
     }
 
     @Override
@@ -17,7 +17,7 @@ class DescobridorDeHeadings extends AbstractVisitor {
         if (heading.getLevel() == 1) {
             // capítulo
             String tituloDoCapitulo = ((Text) heading.getFirstChild()).getLiteral();
-            capitulo.setTitulo(tituloDoCapitulo);
+            capituloBuilder.comTitulo(tituloDoCapitulo);
         } else if (heading.getLevel() == 2) {
             // seção
         } else if (heading.getLevel() == 3) {
