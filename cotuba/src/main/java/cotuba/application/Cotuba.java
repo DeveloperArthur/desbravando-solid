@@ -9,12 +9,6 @@ import cotuba.plugin.AoFinalizarGeracao;
 import java.nio.file.Path;
 import java.util.List;
 
-//TODO: E SE FUTURAMENTE O CLIENTE QUISER QUE O COTUBA CONVERTA HTML PARA EPUB?
-// NOSSO CODIGO VAI QUEBRAR... PQ LOGO NO MAIN ESTAMOS CONVERTENDO MD PRA HTML
-// e nessa funcionalidade nova nao teremos md
-//TODO: OUTRA COISA É SE TIVERMOS UMA IMPLEMENTACAO QUE CONVERTE DE MD PRA PDF DIRETO
-// nao faz sentido essa implementacao receber os capitulos com conteudo html
-
 public class Cotuba {
     private GeradorEbook geradorEbook;
 
