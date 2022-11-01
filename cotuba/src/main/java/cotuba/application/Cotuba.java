@@ -10,7 +10,6 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class Cotuba {
-    private GeradorEbook geradorEbook;
 
     public void executa(ParametrosCotuba parametros){
         FormatoEbook formato = parametros.getFormato();
