@@ -1,33 +1,43 @@
-package cotuba.tests.integration;
+package cotuba.plugin.integration;
 
+import cotuba.application.Cotuba;
+import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
 import cotuba.plugin.AoFinalizarGeracao;
 import cotuba.plugin.AoRenderizarHTML;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static cotuba.Util.getParametrosCotubaMock;
 
 public class PluginTest {
-    //criar um plugin, ver se vai - como testar service loader api?
+    public static Boolean PLUGIN_AoFinalizarGeracao_FOI_INVOCADO = false;
+    public static Boolean PLUGIN_AoRenderizarHTML_FOI_INVOCADO = false;
 
-    public void deveExecutarPluginAoFinalizarGeracao(){
+    @Test
+    public void deveExecutarPluginsComSucesso(){
+        Cotuba cotuba = new Cotuba();
+        cotuba.executa(getParametrosCotubaMock());
 
+        Assertions.assertTrue(PLUGIN_AoFinalizarGeracao_FOI_INVOCADO);
+        Assertions.assertTrue(PLUGIN_AoRenderizarHTML_FOI_INVOCADO);
     }
 
-    public void deveExecutarPluginAoRenderizarHTML(){
-
-    }
-
-    public class PluginTestAoFinalizarGeracao implements AoFinalizarGeracao {
-
+    public static class PluginTestAoFinalizarGeracao implements AoFinalizarGeracao {
         @Override
         public void aposGeracao(Ebook ebook) {
-
+            PLUGIN_AoFinalizarGeracao_FOI_INVOCADO = true;
+            for (Capitulo capitulo : ebook.capitulos()){
+                System.out.println(capitulo.titulo());
+            }
         }
     }
 
-    public class PluginTestAoRenderizarHTML implements AoRenderizarHTML {
-
+    public static class PluginTestAoRenderizarHTML implements AoRenderizarHTML {
         @Override
         public String aposRenderizacao(String html) {
-            return null;
+            PLUGIN_AoRenderizarHTML_FOI_INVOCADO = true;
+            return html;
         }
     }
 }
