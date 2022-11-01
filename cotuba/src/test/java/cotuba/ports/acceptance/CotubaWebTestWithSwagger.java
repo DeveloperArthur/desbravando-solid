@@ -1,4 +1,4 @@
-package cotuba.ports.integration;
+package cotuba.tests.ports.acceptance;
 
 public class CotubaWebTestWithSwagger {
 }

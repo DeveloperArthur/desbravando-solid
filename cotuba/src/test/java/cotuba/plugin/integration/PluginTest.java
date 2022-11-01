@@ -1,4 +1,4 @@
-package cotuba.plugin.integration;
+package cotuba.tests.integration;
 
 import cotuba.domain.Ebook;
 import cotuba.plugin.AoFinalizarGeracao;

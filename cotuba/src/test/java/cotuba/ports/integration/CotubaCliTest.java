@@ -1,4 +1,4 @@
-package cotuba.ports.unit;
+package cotuba.ports.integration;
 
 import cotuba.cli.LeitorOpcoesCLI;
 import cotuba.cli.Main;

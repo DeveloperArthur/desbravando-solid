@@ -1,4 +1,4 @@
-package cotuba.domain.unit;
+package cotuba.tests.unit;
 
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
