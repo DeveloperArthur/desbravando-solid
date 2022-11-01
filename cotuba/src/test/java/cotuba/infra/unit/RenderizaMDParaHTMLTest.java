@@ -1,5 +1,6 @@
 package cotuba.infra.unit;
 
+import cotuba.Util;
 import cotuba.domain.Capitulo;
 import cotuba.md.RenderizadorMDParaHTML;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ public class RenderizaMDParaHTMLTest {
 
     @Test
     public void deveRetornarCorretamenteListaDeCapitulos(){
-        List<Capitulo> capitulos = new RenderizadorMDParaHTML().renderiza(Paths.get("./livro-exemplo"));
+        List<Capitulo> capitulos = new RenderizadorMDParaHTML().renderiza(Paths.get(Util.DIRETORIO_DOS_MD));
 
         String conteudoHTMLDoPrimeiroCapitulo = "<h1>Para que serve OO?</h1>\n" +
                 "<h2>Modelagem e Dependências</h2>\n" +

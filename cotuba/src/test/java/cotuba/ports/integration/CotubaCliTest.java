@@ -1,5 +1,6 @@
 package cotuba.ports.integration;
 
+import cotuba.Util;
 import cotuba.cli.LeitorOpcoesCLI;
 import cotuba.cli.Main;
 import cotuba.domain.FormatoEbook;
@@ -23,7 +24,7 @@ public class CotubaCliTest {
 
         assertEquals(FormatoEbook.EPUB, parametrosCotuba.getFormato());
         assertEquals(Paths.get("book.epub"), parametrosCotuba.getArquivoDeSaida());
-        assertEquals(Paths.get("./livro-exemplo"), parametrosCotuba.getDiretorioDosMD());
+        assertEquals(Paths.get(Util.DIRETORIO_DOS_MD), parametrosCotuba.getDiretorioDosMD());
     }
 
     @Test
