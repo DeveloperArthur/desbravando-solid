@@ -1,4 +1,4 @@
-package infra.unit;
+package cotuba.infra.unit;
 
 import cotuba.domain.Capitulo;
 import cotuba.md.RenderizadorMDParaHTML;

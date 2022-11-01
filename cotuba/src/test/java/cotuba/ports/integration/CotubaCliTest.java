@@ -1,4 +1,4 @@
-package ports.integration;
+package cotuba.ports.integration;
 
 import cotuba.cli.Main;
 import org.junit.jupiter.api.Test;

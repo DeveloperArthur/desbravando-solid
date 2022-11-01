@@ -1,4 +1,4 @@
-package application.integration;
+package cotuba.application.integration;
 
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
