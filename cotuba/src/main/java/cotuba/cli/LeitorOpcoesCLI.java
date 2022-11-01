@@ -18,13 +18,13 @@ import java.nio.file.Paths;
 import java.util.Comparator;
 
 //classe responsável por extrair as opções de linha de comando
-class LeitorOpcoesCLI implements ParametrosCotuba {
+public class LeitorOpcoesCLI implements ParametrosCotuba {
     private Path diretorioDosMD;
     private FormatoEbook formato;
     private Path arquivoDeSaida;
     private boolean modoVerboso = false;
 
-    LeitorOpcoesCLI(String[] args) {
+    public LeitorOpcoesCLI(String[] args) {
         Options options = criaOpcoes();
         CommandLine cmd = parseDosArgumentos(args, options);
         trataDiretorioDosMD(cmd);
