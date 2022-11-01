@@ -2,8 +2,9 @@ package domain.unit;
 
 import cotuba.domain.Capitulo;
 import cotuba.domain.builder.CapituloBuilder;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CapituloBuilderTest {
 
@@ -15,7 +16,7 @@ public class CapituloBuilderTest {
                 .comTitulo("Titulo teste!")
                 .constroi();
 
-        Assert.assertEquals("<h1>ola</h1>", capitulo.conteudoHTML());
-        Assert.assertEquals("Titulo teste!", capitulo.titulo());
+        assertEquals("<h1>ola</h1>", capitulo.conteudoHTML());
+        assertEquals("Titulo teste!", capitulo.titulo());
     }
 }

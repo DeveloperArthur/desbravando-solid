@@ -5,15 +5,16 @@ import com.itextpdf.kernel.pdf.PdfReader;
 import cotuba.application.Cotuba;
 import cotuba.application.ParametrosCotuba;
 import cotuba.domain.FormatoEbook;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class CotubaEndToEndTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CotubaApplicationToAdapterTest {
 
     @Test
     public void deveGerarPDFComBaseNoMDDeTeste() throws IOException {
@@ -24,9 +25,9 @@ public class CotubaEndToEndTest {
         Cotuba cotuba = new Cotuba();
         cotuba.executa(new ParametrosCotubaTest());
 
-        Assert.assertTrue(file.exists());
-        Assert.assertEquals("book.pdf", file.getName());
-        Assert.assertEquals(5, numeroDePaginasDoPDF(file));
+        assertTrue(file.exists());
+        assertEquals("book.pdf", file.getName());
+        assertEquals(5, numeroDePaginasDoPDF(file));
     }
     public static class ParametrosCotubaTest implements ParametrosCotuba {
         @Override

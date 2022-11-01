@@ -2,11 +2,12 @@ package infra.unit;
 
 import cotuba.domain.Capitulo;
 import cotuba.md.RenderizadorMDParaHTML;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.nio.file.Paths;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RenderizaMDParaHTMLTest {
 
@@ -102,13 +103,13 @@ public class RenderizaMDParaHTMLTest {
                 "<p>MARTIN, Robert Cecil. <em>Agile Principles, Patterns, and Practices in C#</em>. Prentice Hall, 2006. 732 p. Em: <a href=\"https://www.amazon.com.br/Agile-Principles-Patterns-Practices-C/dp/0131857258\">https://www.amazon.com.br/Agile-Principles-Patterns-Practices-C/dp/0131857258</a>.</p>\n" +
                 "<p>MARTIN, Robert Cecil. <em>Getting a SOLID start.</em>. 2009. Em: <a href=\"https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start\">https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start</a>.</p>\n";
 
-        Assert.assertEquals("Para que serve OO?", capitulos.get(0).titulo());
-        Assert.assertEquals(conteudoHTMLDoPrimeiroCapitulo, capitulos.get(0).conteudoHTML());
+        assertEquals("Para que serve OO?", capitulos.get(0).titulo());
+        assertEquals(conteudoHTMLDoPrimeiroCapitulo, capitulos.get(0).conteudoHTML());
 
-        Assert.assertEquals("S.O.L.I.D.", capitulos.get(1).titulo());
-        Assert.assertEquals(conteudoHTMLDoSegundoCapitulo, capitulos.get(1).conteudoHTML());
+        assertEquals("S.O.L.I.D.", capitulos.get(1).titulo());
+        assertEquals(conteudoHTMLDoSegundoCapitulo, capitulos.get(1).conteudoHTML());
 
-        Assert.assertEquals("Referências", capitulos.get(2).titulo());
-        Assert.assertEquals(conteudoHTMLDoTerceiroCapitulo, capitulos.get(2).conteudoHTML());
+        assertEquals("Referências", capitulos.get(2).titulo());
+        assertEquals(conteudoHTMLDoTerceiroCapitulo, capitulos.get(2).conteudoHTML());
     }
 }

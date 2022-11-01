@@ -3,11 +3,12 @@ package domain.unit;
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
 import cotuba.domain.FormatoEbook;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class EbookTest {
 
@@ -28,8 +29,8 @@ public class EbookTest {
         boolean temQueSerFalseTambem = ebook.ultimoCapitulo(segundoCapitulo);
         boolean temQueSerTrue = ebook.ultimoCapitulo(ultimoCapitulo);
 
-        Assert.assertFalse(temQueSerFalse);
-        Assert.assertFalse(temQueSerFalseTambem);
-        Assert.assertTrue(temQueSerTrue);
+        assertFalse(temQueSerFalse);
+        assertFalse(temQueSerFalseTambem);
+        assertTrue(temQueSerTrue);
     }
 }
