@@ -25,7 +25,7 @@ public class Main {
             if (modoVerboso) {
                 ex.printStackTrace();
             }
-            System.exit(1);
+            throw new IllegalStateException("erro");
         }
     }
 }
