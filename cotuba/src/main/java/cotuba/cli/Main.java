@@ -2,24 +2,19 @@ package cotuba.cli;
 
 import cotuba.application.Cotuba;
 
-import java.nio.file.Path;
-
 //View
 public class Main {
     public static void main(String[] args) {
-        Path arquivoDeSaida;
         boolean modoVerboso = false;
 
         try {
-            var opcoesCLI = new LeitorOpcoesCLI(args);
-
-            arquivoDeSaida = opcoesCLI.getArquivoDeSaida();
+            var opcoesCLI = montaParametrosComArgumentosRecebidos(args);
             modoVerboso = opcoesCLI.isModoVerboso();
 
             Cotuba cotuba = new Cotuba();
             cotuba.executa(opcoesCLI);
 
-            System.out.println("Arquivo gerado com sucesso: " + arquivoDeSaida);
+            System.out.println("Arquivo gerado com sucesso: " + opcoesCLI.getArquivoDeSaida());
         }catch (Exception ex) {
             System.err.println(ex.getMessage());
             if (modoVerboso) {
@@ -27,5 +22,9 @@ public class Main {
             }
             throw new IllegalStateException("erro");
         }
+    }
+
+    public static LeitorOpcoesCLI montaParametrosComArgumentosRecebidos(String[] args){
+        return new LeitorOpcoesCLI(args);
     }
 }
